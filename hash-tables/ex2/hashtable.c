@@ -40,7 +40,7 @@ HashTable *create_hash_table(int capacity)
 
   return ht;
 }
-
+// this is taking in hashtable, key, and value. 
 void hash_table_insert(HashTable *ht, char *key, char *value)
 {
   unsigned int index = hash(key, ht->capacity);
@@ -89,7 +89,7 @@ void hash_table_remove(HashTable *ht, char *key)
     destroy_pair(current_pair);
   }
 }
-
+//  this is taking in hashtable and key. 
 char *hash_table_retrieve(HashTable *ht, char *key)
 {
   unsigned int index = hash(key, ht->capacity);
