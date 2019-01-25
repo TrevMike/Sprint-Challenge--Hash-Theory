@@ -6,12 +6,30 @@
 Answer *get_indices_of_item_weights(int *weights, int length, int limit)
 {
   HashTable *ht = create_hash_table(16);
-
-  // YOUR CODE HERE
-
+// might need to malloc
+Answer *answer = malloc(sizeof(Answer));
+  // make a loop 
+  for (int i = 0; i < length; i++)
+  {
+  // hashtable, key, and value. 
+    int smaller_index = hash_table_retrieve(ht, limit - weights);
+  //  ht, 21 - 15+6
+    if (smaller_index != -1)
+    {
+      // trying to get index2 to be the smaller index in the array. 
+      answer->index_1 = i;
+      answer->index_2 = smaller_index;
+      return answer;
+    }
+    else
+    {
+      // hashtable, key, and value. 
+      hash_table_insert(ht, weights[i], ? IdkWhatGoesInHere);
+    }
+  }
   return NULL;
 }
-
+// we should use this for the malloc
 void print_answer(Answer *answer)
 {
   if (answer != NULL) {
